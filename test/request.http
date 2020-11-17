@@ -1,0 +1,9 @@
+
+###
+GET http://localhost:9999/cities
+
+###
+GET http://localhost:9999/fail
+
+###
+GET http://localhost:9999/fff
