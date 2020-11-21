@@ -1,26 +1,43 @@
 package cities
 
 type City struct {
-	Name       string
-	Country    string
-	Population int
-	Est        int
+	Name       string `json:"name"`
+	Country    string `json:"country"`
+	Population int    `json:"population"`
+	Est        int    `json:"est"`
 }
 
-type Service struct {
-	Cities []*City
+var Cities = []City{
+	{
+		Name:       "Moscow",
+		Country:    "Russia",
+		Population: 14_000_000,
+		Est:        1147,
+	},
+	{
+		Name:       "Kiev",
+		Country:    "Ukraine",
+		Population: 4_000_000,
+		Est:        882,
+	},
+	{
+		Name:       "Minsk",
+		Country:    "Belarus",
+		Population: 2_000_000,
+		Est:        1067,
+	},
+	{
+		Name:       "Vilnius",
+		Country:    "Lietuva",
+		Population: 500_000,
+		Est:        1323,
+	},
 }
 
-func NewService() *Service {
-	return &Service{}
-}
-
-func (s *Service) AddCity(name string, country string, population int, est int) {
-	var c City
-	c.Name = name
-	c.Country = country
-	c.Population = population
-	c.Est = est
-	s.Cities = append(s.Cities, &c)
-	return
+func AllCities() []City {
+	result := make([]City, 0)
+	for _, c := range Cities {
+		result = append(result, c)
+	}
+	return result
 }

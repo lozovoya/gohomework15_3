@@ -48,6 +48,7 @@ var (
 	ErrNilHandler       = errors.New("nil handler")
 	ErrAmbiguousMapping = errors.New("ambiguous mapping")
 	ErrNoParams         = errors.New("no params")
+	ErrGen              = errors.New("general error")
 )
 
 type Method string
